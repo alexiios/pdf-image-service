@@ -1,0 +1,13 @@
+services:
+  - type: web
+    runtime: docker
+    name: pdf-image-only
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ACCESS_PASSWORD
+        sync: false
+      - key: MAX_UPLOAD_MB
+        value: "80"
+      - key: CONVERT_TIMEOUT_SECONDS
+        value: "900"
